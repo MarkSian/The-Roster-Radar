@@ -1,0 +1,45 @@
+{
+  "name": "the-roster-radar",
+  "version": "1.0.0",
+  "type": "module",
+
+  "scripts": {
+    "install": "cd server && npm i && cd ../the-roster-radar-frontend && npm i",
+    "server": "cd server && npm start",
+    "script:server": "cd server && npm run build && npm run init && npm run populate",
+    "build": "npm run script:server && npm run build:frontend",
+    "build:frontend": "cd the-roster-radar-frontend && npm run build",
+    "render-build": "npm install && npm run build",
+    "start": "concurrently \"cd server && npm start\" \"cd the-roster-radar-frontend && npm start\"",
+    "start:dev": "concurrently \"npm run server\" \"cd the-roster-radar-frontend && npm run dev\""
+  },
+
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
+    "pg-pool": "^3.7.0",
+    "ts-node": "^10.9.2"
+  },
+
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.2",
+    "ts-node": "^10.9.2"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
